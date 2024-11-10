@@ -15,5 +15,18 @@ public class Main {
         appointment.scheduleAppointment();
         appointment.cancelAppointment();
         appointment.rescheduleAppointment();
+
+        // Observers for Billing
+        InsuranceBilling insuranceBilling = new InsuranceBilling();
+        CharityBilling charityBilling = new CharityBilling();
+
+        Billing billing = new Billing();
+        billing.addObserver(patient);
+        billing.addObserver(insuranceBilling);
+        billing.addObserver(charityBilling);
+
+        // Billing notifications
+        billing.updateBillingStatus();
+        billing.updateAmount(500.00);
     }
 }
