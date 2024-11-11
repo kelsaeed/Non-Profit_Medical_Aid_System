@@ -2,7 +2,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Billing {
+public class Billing implements BillingStrategy {
+
+    BillingStrategy b;
     private List<Observer> observers = new ArrayList<>();
 
     public void addObserver(Observer observer) {
@@ -28,4 +30,17 @@ public class Billing {
         // Update billing amount logic
         notifyObservers("Billing amount updated to: " + amount);
     }
+
+    @Override
+    public void calculateBill() {
+        System.out.println("Default Billing applied.");
+    };
+
+    public Billing(BillingStrategy b){
+        this.b= b;
+    };
+    public Billing(){
+
+    };
+
 }
