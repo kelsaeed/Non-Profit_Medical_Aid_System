@@ -1,0 +1,39 @@
+public class LabTest {
+    private String testID;
+    private String testName;
+    private String testResult;
+
+    // Constructor
+    public LabTest(String testID, String testName) {
+        this.testID = testID;
+        this.testName = testName;
+        this.testResult = "Pending"; // Default test result
+    }
+
+    // Getters
+    public String getTestID() {
+        return testID;
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public String getTestResult() {
+        return testResult;
+    }
+
+    // Setters
+    public void setTestResult(String testResult) {
+        this.testResult = testResult;
+    }
+
+    @Override
+    public String toString() {
+        return "LabTest{" +
+                "testID='" + testID + '\'' +
+                ", testName='" + testName + '\'' +
+                ", testResult='" + testResult + '\'' +
+                '}';
+    }
+}
